@@ -34,9 +34,7 @@ exports.copyUserPostTOIndexes = functions.database.ref('/users/{userId}/posts/{p
   //RealTimeDataBaseに書き込まれた値
   const newPost = change.after.val();
 
-  console.log(`userid: ${userId}, postid: ${postId}`);
-  console.log('before value:', oldPost);
-  console.log('after value:', newPost);
+  console.log(`userid: ${userId}, postid: ${postId}, oldvalue: ${oldPost}, newvalue: ${newPost}`);
 
   admin.database().ref('posts/' + postId).set(newPost);
 
